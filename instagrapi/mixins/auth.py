@@ -613,7 +613,7 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
         Dict
             Current session settings as a Dict
         """
-        with open(path, "r") as fp:
+        with open(path, "r", encoding="utf-8-sig") as fp:
             self.set_settings(json.load(fp))
             return self.settings
         return None
